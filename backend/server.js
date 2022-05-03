@@ -3,7 +3,7 @@ const colors = require('colors')
 const dotenv = require('dotenv').config()
 const { errorHandler } = require('./middleware/errorMiddleware')
 const connectDB = require('./config/db')
-let port = process.env.PORT || 5000;
+
 
 connectDB()
 
@@ -31,4 +31,5 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(errorHandler)
 
+let port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server started on port ${port}`))
